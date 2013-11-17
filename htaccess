@@ -1,9 +1,4 @@
 AddHandler cgi-script .pl
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-SSL} !on
-RewriteRule ^$ http://%{HTTP_HOST}%{REQUEST_URI}cgi-bin/awstats.pl [R]
-RewriteCond %{HTTP:X-Forwarded-SSL} on
-RewriteRule ^$ https://%{HTTP_HOST}%{REQUEST_URI}cgi-bin/awstats.pl [R]
 
 #AuthUserFile stats.htdigests
 #AuthName "stats"
