@@ -1,5 +1,5 @@
 # Bosnian message file (info@uino.gov.ba)
-# $Revision: 1.5 $ - $Date: 2007/03/06 18:36:29 $
+# $Revision$ - $Date$
 PageCode=iso-8859-2
 message0=Nepoznat
 message1=nepoznatih (IP adresa nije razrije¹ena)

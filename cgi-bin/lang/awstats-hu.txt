@@ -1,5 +1,5 @@
 # Hungarian message file (gabor.funk@hunetkft.hu)
-# based on $Revision: 1.19 $ - $Date: 2005/12/15 00:04:20 $
+# based on $Revision$ - $Date$
 PageCode=iso-8859-2
 message0=Ismeretlen
 message1=Ismeretlen (feloldatlan ip)

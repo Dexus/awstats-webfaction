@@ -1,6 +1,6 @@
 ﻿# Latviešu valodas ziņojumu fails (madmaster@gobbo.caves.lv)
 # Updated by edvinsma@inbox.lv 2004/01/24 00:40:00
-# $Revision: 1.6 $ - $Date: 2012/11/20 23:15:29 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=Nezināms
 message1=Nezināms (neatpazīts ip)

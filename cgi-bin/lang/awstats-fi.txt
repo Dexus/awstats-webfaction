@@ -1,6 +1,6 @@
 # Finnish message file (skyde@welho.com)
 # Original by (zebi@kanetti.com)
-# $Revision: 1.4 $ - $Date: 2008/10/05 11:01:31 $
+# $Revision$ - $Date$
 PageCode=iso-8859-1
 message0=Tuntematon
 message1=Tuntematon (Selvittämätön IP)

@@ -1,5 +1,5 @@
 # Portuguese message file
-# $Revision: 1.11 $ - $Date: 2008/10/05 11:01:31 $
+# $Revision$ - $Date$
 PageCode=iso-8859-1
 message0=Desconhecido
 message1=Desconhecido (ip não resolvido)

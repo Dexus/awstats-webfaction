@@ -1,5 +1,5 @@
 # Chinese (simplified) message file (by Che Dong chedongATgmail.com)
-# $Revision: 1.14 $ - $Date: 2012/03/30 17:16:50 $
+# $Revision$ - $Date$
 PageCode=GBK
 message0=无法得知
 message1=无法得知（不能反向解析的网域名称）

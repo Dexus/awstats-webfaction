@@ -1,5 +1,5 @@
 <!-- Korean tooltips message file -->
-<!-- $Revision: 1.1 $ - $Date: 2004/02/07 16:14:10 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 새로운 방문은 이전에(<b>#VisitTimeOut# 분이내</b>)
 당신의 사이트에 접속하지 않은(보거나 브라우징 하지 않은) 새로운

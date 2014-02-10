@@ -3,7 +3,6 @@
 # Export lib data values to a text files to allow to use AWStats robots,
 # os, browsers, search_engines database with other log analyzers
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2010/01/20 17:39:20 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -15,8 +14,8 @@ use strict;no strict "refs";
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
-my $VERSION="5.1 (build $REVISION)";
+$REVISION='20140126';
+$VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
 # Constants

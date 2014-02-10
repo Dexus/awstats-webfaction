@@ -5,7 +5,6 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2010/04/17 17:57:58 $
 
 use strict; no strict "refs";
 use Switch;
@@ -13,7 +12,7 @@ use Switch;
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.1 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION = '20140126';
 my $VERSION="0.5 (build $REVISION)";
 
 use vars qw/

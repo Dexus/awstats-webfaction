@@ -17,8 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #------------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2012/02/15 15:23:43 $
-#------------------------------------------------------------------------------
 use CGI qw(:standard);
 
 my $ALLOWDOWNLOAD=0;

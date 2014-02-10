@@ -1,5 +1,5 @@
 # Czech message file (David Jurenka <awstats-translation.box NO SP@M imx.jurenka D.O.T cz>)
-# $Revision: 1.13 $ - $Date: 2009/08/26 10:14:07 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=Neznámé
 message1=neznámých (nepřeložené IP)

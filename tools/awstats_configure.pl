@@ -8,7 +8,6 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2009/12/28 00:52:13 $
 require 5.005;
 
 use strict;
@@ -46,7 +45,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.9 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='20140126';
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/

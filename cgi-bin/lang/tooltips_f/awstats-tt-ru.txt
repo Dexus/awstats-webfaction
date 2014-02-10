@@ -1,5 +1,5 @@
 ﻿<!--Russian tooltips message file -->
-<!-- $Revision: 1.1 $ - $Date: 2009/05/25 16:06:42 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 </div>
 <div class="CTooltip" id="tt2">

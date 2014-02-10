@@ -16,7 +16,7 @@ use strict;no strict "refs";
 
 
 # variables, etc
-my $REVISION='$Revision: 1.8 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION = '20140126';
 my $VERSION="1.0 (build $REVISION)";
 
 ############### EDIT HERE ###############

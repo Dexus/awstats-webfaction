@@ -1,5 +1,5 @@
 # Thai message file (kamthorn@users.sourceforge.net)
-# $Revision: 1.1 $ - $Date: 2004/08/16 20:07:54 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=ไม่ทราบ
 message1=ไม่ทราบ (ไอพีไม่สามารถค้นกลับได้)

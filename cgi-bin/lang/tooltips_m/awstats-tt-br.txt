@@ -1,5 +1,5 @@
 <!-- Brazilian Portuguese tooltips message file (urban@ite.net.br) -->
-<!-- $Revision: 1.2 $ - $Date: 2008/11/06 21:11:05 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 </div>
 <div class="CTooltip" id="tt2">

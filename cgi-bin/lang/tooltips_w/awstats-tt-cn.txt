@@ -1,4 +1,4 @@
-<!-- $Revision: 1.1 $ - $Date: 2004/02/07 16:14:10 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 此字段为参观网站的总人次，从相同地址来浏览本网站，时间间隔须至少#VisitTimeOut#分钟才会再记录一次。
 </div>

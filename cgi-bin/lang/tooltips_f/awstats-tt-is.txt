@@ -1,5 +1,5 @@
 <!-- Icelandic tooltips message file (throstur@bylur.net) -->
-<!-- $Revision: 1.1 $ - $Date: 2004/09/19 11:06:05 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 </div>
 <div class="CTooltip" id="tt2">

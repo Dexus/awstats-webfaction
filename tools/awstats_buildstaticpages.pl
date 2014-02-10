@@ -3,7 +3,6 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.44 $ - $Author: eldy $ - $Date: 2012/10/17 09:22:48 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -15,7 +14,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.44 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='20140126';
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -425,7 +424,7 @@ if ($BuildDate) {
 my $cpt=0;
 my $NoLoadPlugin="";
 if ($BuildPDF) { $NoLoadPlugin.="tooltips,rawlog,hostinfo"; }
-my $smallcommand="\"$Awstats\" -config=$SiteConfig".($BuildPDF?" -buildpdf":"").($NoLoadPlugin?" -noloadplugin=$NoLoadPlugin":"").($DatabaseBreak?" -databasebreak=$DatabaseBreak":"")." -staticlinks".($OutputSuffix ne $SiteConfig?"=$OutputSuffix":"");
+my $smallcommand="\"$Awstats\" -config=$SiteConfig".($BuildPDF?" -buildpdf":"").($NoLoadPlugin?" -noloadplugin=$NoLoadPlugin":"").($DatabaseBreak?" -databasebreak=$DatabaseBreak":"")." -staticlinks".($OutputSuffix ne $SiteConfig?"=awstats.$OutputSuffix":"");
 if ($StaticExt && $StaticExt ne 'html')     { $smallcommand.=" -staticlinksext=$StaticExt"; }
 if ($DirIcons)      { $smallcommand.=" -diricons=$DirIcons"; }
 if ($DirConfig)     { $smallcommand.=" -configdir=$DirConfig"; }

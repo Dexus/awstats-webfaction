@@ -1,5 +1,5 @@
 <!-- Hungarian tooltip file (gabor.funk@hunetkft.hu)  -->
-<!-- $Revision: 1.2 $ - $Date: 2004/12/10 23:39:34 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Új látogatásnak számít minden olyan új <b>beérkezett látogató</b> aki megtekint egy oldalt és a legutolsó látogatása óta eltelt legalább <b>#VisitTimeOut# perc</b>.
 </div>

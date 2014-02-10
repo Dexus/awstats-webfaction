@@ -3,7 +3,6 @@
 # If you want to extend AWStats detection capabilities,
 # you must add an entry in RefererSpamKeys
 #-------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2009/04/23 20:54:29 $
 
 
 #package AWSREFSPAMMERS;

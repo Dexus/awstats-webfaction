@@ -1,5 +1,5 @@
 # Indonesian message file (oleh Steven Haryanto)
-# $Revision: 1.7 $ - $Date: 2008/10/05 11:01:31 $
+# $Revision$ - $Date$
 PageCode=iso-8859-1
 message0=Tidak Diketahui
 message1=Tidak Diketahui (IP tidak teresolve)

@@ -3,7 +3,6 @@
 # If you want to add MIME types,
 # you must add an entry in MimeHashLib and assign it to a family
 #-------------------------------------------------------
-# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2011/12/30 18:23:09 $
 
 
 #package AWSMIME;

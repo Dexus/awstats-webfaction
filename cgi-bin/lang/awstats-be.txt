@@ -1,5 +1,5 @@
 # Belarusian message file (piatruk.p@gmail.com)
-# $Revision: 1.1 $ - $Date: 2008/06/04 17:29:21 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=Невядомы
 message1=Невядомы (невызначаны ip)

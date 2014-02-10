@@ -5,7 +5,6 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2011/01/14 11:05:31 $
 # 
 # Changelog
 #
@@ -29,8 +28,8 @@ no strict "refs";
 my $PluginNeedAWStatsVersion = "7.0";
 my $PluginHooksFunctions = "Init ShowGraph AddHTMLHeader";
 my $PluginName = "graphgooglechartapi";
-my $ChartProtocol = "http://";
-my $ChartURI = "chart.apis.google.com/chart?";	# Don't put the HTTP part here!
+my $ChartProtocol = "https://";
+my $ChartURI = "chart.googleapis.com/chart?";	# Don't put the HTTP part here!
 my $ChartIndex = 0;
 my $title;
 my $type;
@@ -169,7 +168,7 @@ sub ShowGraph_graphgooglechartapi() {
 # Return:		0 OK, 1 Error
 #-------------------------------------------------------
 sub AddHTMLHeader_graphgooglechartapi(){
-	print "<script type='text/javascript' src='http://www.google.com/jsapi'></script>\n";
+	print "<script type='text/javascript' src='https://www.google.com/jsapi'></script>\n";
 }
 
 #-------------------------------------------------------

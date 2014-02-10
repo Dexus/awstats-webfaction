@@ -1,5 +1,5 @@
 <!-- Bulgarian tooltips message file translated by Aryan(aryan@bgns.net) -->
-<!-- $Revision: 1.3 $ - $Date: 2011/11/02 10:49:00 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Ново посещение се отчита при всеки нов <b>входящ посетител</b> (разглеждащ страница), който не е посещавал през последните <b>#VisitTimeOut# min</b>.
 </div>

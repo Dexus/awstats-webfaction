@@ -1,5 +1,5 @@
 # Norwegian Bokmål message file (by Vemund F Jensen <vemund.jensen@sib.uib.no>)
-# $Revision: 1.8 $ - $Date: 2004/04/09 19:18:33 $
+# $Revision$ - $Date$
 PageCode=iso-8859-1
 message0=Ukjent
 message1=Ukjente (fant ikke vertsnavn)

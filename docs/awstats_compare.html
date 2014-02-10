@@ -1,12 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head>
 <meta name="description" content="AWStats Documentation - Log File analyzer comparison">
-<meta name="keywords" content="awstats, awstat, log, file, analyzer, differences, compare, comparison, analog, webalizer">
+<meta name="keywords" content="awstats, awstat, log, file, analyzer, differences, compare, comparison, analog, webalizer, market">
 <meta name="robots" content="index,follow">
 <meta name="title" content="AWStats Documentation - Log File analyzer comparison"><title>AWStats Documentation - Log File analyzer comparison</title>
 
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.93 $ - $Author: eldy $ - $Date: 2013/07/09 18:54:23 $ -->
 <style type="text/css">
 <!--
 .style1 {color: #4444cc}
@@ -19,12 +18,11 @@
 <!-- Large -->
 <tbody>
 <tr style="font-family: arial,helvetica,verdana; font-style: normal; font-variant: normal; font-weight: normal; font-size: 10pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
-<td align="center" bgcolor="#9999cc"><a href="/"><img src="images/awstats_logo4.png" border="0"></a></td>
+<td align="center" bgcolor="#9999cc"><a href="/"><img src="images/awstats_logo6.png" border="0"></a></td>
 
 <td align="center" bgcolor="#9999cc">
 <br>
-<font style="font-family: arial,helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16pt; line-height: normal; font-size-adjust: none; font-stretch: normal;" color="#eeeeff"><b>AWStats logfile analyzer 7.1
-Documentation</b></font><br>
+<font style="font-family: arial,helvetica,sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16pt; line-height: normal; font-size-adjust: none; font-stretch: normal;" color="#eeeeff"><b>AWStats logfile analyzer 7.3 Documentation</b></font><br>
 <br>
 </td>
 <td align="center" bgcolor="#9999cc">&nbsp;
@@ -58,7 +56,7 @@ Analytics</a></b></td>
 </tr>
 <tr align="center">
 <td align="left">Version - Date</td>
-<td>6.95 - October 2009</td>
+<td>7.2 - July 2013</td>
 <td>6.0 - December 2004</td>
 <td>2.01-10 - April 2002</td>
 <!-- <td>NA</td> --> <td>8.5 - July 2011</td>
@@ -74,7 +72,6 @@ Analytics</a></b></td>
 <tr align="center">
 <td align="left">Available on all platforms</td>
 <td><font color="#4444cc">Yes</font></td>
-
 <td><font color="#4444cc">Yes</font></td>
 <td><font color="#4444cc">Yes</font></td>
 <!-- <td>NA</td> --> <td><font color="#4444cc">Yes</font></td>
@@ -243,17 +240,15 @@ Custom *****</font></td>
 <tr align="center">
 <td align="left">Report countries</td>
 <td><font color="#4444cc">From IP location<br>
-or domain name</font></td>
+ or domain name</font></td>
 <td><font color="#660000">Domain name</font></td>
 <td><font color="#660000">Domain name</font></td>
 <!-- <td>?</td> --> <td><font color="#4444cc">From
 IP location<br>
-
 or domain name</font></td>
 </tr>
 <tr align="center" bgcolor="#eeeeee">
-<td align="left">Report regions (US and Canada
-states)</td>
+<td align="left">Report regions (US and Canada states)</td>
 <td>Need <a href="http://www.maxmind.com/en/city?rId=awstats"><font style="font-family: arial,helvetica,verdana; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: normal; font-size-adjust: none; font-stretch: normal;">Maxmind
 Regions</font></a> database</td>
 <td><font color="#660000">No</font></td>
@@ -320,16 +315,13 @@ Org</font></a> database</td>
 </tr>
 <tr align="center">
 <td align="left">Report/Filter robots (nb detected)</td>
-<td><font color="#4444cc">Yes/Yes (642**)</font></td>
-<td><font color="#4444cc">Yes / Yes</font>
-
-<font color="#660000">(8**)</font></td>
+<td><font color="#4444cc">Yes/Yes (793**)</font></td>
+<td><font color="#4444cc">Yes / Yes</font><font color="#660000">(8**)</font></td>
 <td><font color="#660000">No/No</font></td>
 <!-- <td><font color=#660000>No/No</font></td> --> <td><font color="#4444cc">Yes/Yes (250**)</font></td>
 </tr>
 <tr align="center" bgcolor="#eeeeee">
-<td align="left">Report/Filter worms (nb of families
-detected)</td>
+<td align="left">Report/Filter worms (nb of families detected)</td>
 <td><font color="#4444cc">Yes/Yes (5)</font></td>
 <td><font color="#660000">No / No</font></td>
 <td><font color="#660000">No/No</font></td>
@@ -373,31 +365,25 @@ detected)</td>
 </tr>
 <tr align="center">
 <td align="left">Report exit pages</td>
-<td><font color="#4444cc">Yes<br>
-</font></td>
+<td><font color="#4444cc">Yes<br></font></td>
 <td><font color="#660000">No</font></td>
 <td><font color="#4444cc">Yes</font></td>
 
 <!-- <td><font color=#4444cc>Yes</font></td> --> <td><font color="#4444cc">Yes</font></td>
 </tr>
 <tr align="center" bgcolor="#eeeeee">
-<td align="left">Not ordered records tolerance and
-reorder for entry/exit pages</td>
+<td align="left">Not ordered records tolerance and reorder for entry/exit pages</td>
 <td><font color="#4444cc">Yes</font></td>
-<td><font color="#660000">Entry/Exit not
-supported</font></td>
+<td><font color="#660000">Entry/Exit not supported</font></td>
 <td><font color="#660000">No</font></td>
 <!-- <td>?</td> --> <td><font color="#4444cc">Yes</font></td>
 </tr>
 
 <tr align="center">
-<td align="left">Detection of CGI pages as pages
-(and not just hits)</td>
+<td align="left">Detection of CGI pages as pages (and not just hits)</td>
 <td><font color="#4444cc">Yes</font></td>
-<td><font color="#660000">Only if prog ends by
-a defined value</font></td>
-<td><font color="#660000">Only if prog ends by
-a defined value</font></td>
+<td><font color="#660000">Only if prog ends by a defined value</font></td>
+<td><font color="#660000">Only if prog ends by a defined value</font></td>
 <!-- <td><font color=#4444cc>Yes</font></td> --> <td><font color="#4444cc">Yes</font></td>
 </tr>
 <tr align="center" bgcolor="#eeeeee">
@@ -409,8 +395,7 @@ a defined value</font></td>
 <!-- <td><font color=#660000>No</font></td> --> <td><font color="#4444cc">Yes</font></td>
 </tr>
 <tr align="center">
-<td align="left">Report pages with last access
-time/average size</td>
+<td align="left">Report pages with last access time/average size</td>
 <td><font color="#4444cc">Yes/Yes</font></td>
 <td><font color="#4444cc">Yes</font>/<font color="#660000">No</font></td>
 
@@ -418,8 +403,7 @@ time/average size</td>
 <!-- <td><font color=#660000>No/No</font></td> --> <td><font color="#4444cc">Yes</font>/<font color="#660000">No</font></td>
 </tr>
 <tr align="center" bgcolor="#eeeeee">
-<td align="left">Dynamic filter on
-hosts/pages/referers report</td>
+<td align="left">Dynamic filter on hosts/pages/referers report</td>
 <td><font color="#4444cc">Yes/Yes/Yes</font></td>
 <td><font color="#660000">No/No/No</font></td>
 <td><font color="#660000">No/No/No</font></td>
@@ -427,8 +411,7 @@ hosts/pages/referers report</td>
 <!-- <td><font color=#660000>No/No/No</font></td> --> <td><font color="#4444cc">Yes/Yes/Yes</font></td>
 </tr>
 <tr align="center">
-<td align="left">Report web compression statistics
-(mod_gzip,mod_deflate)</td>
+<td align="left">Report web compression statistics (mod_gzip,mod_deflate)</td>
 <td><font color="#4444cc">Yes</font></td>
 <td><font color="#660000">No</font></td>
 <td><font color="#660000">No</font></td>
@@ -452,7 +435,7 @@ hosts/pages/referers report</td>
 </tr>
 <tr align="center" bgcolor="#eeeeee">
 <td align="left">Report OS (nb detected)</td>
-<td><font color="#4444cc">Yes (71)</font></td>
+<td><font color="#4444cc">Yes (84)</font></td>
 <td><font color="#4444cc">Yes</font><font color="#660000"> (29)</font></td>
 
 <td><font color="#660000">No (0)</font></td>
@@ -460,7 +443,7 @@ hosts/pages/referers report</td>
 </tr>
 <tr align="center">
 <td align="left">Report browsers (nb detected)</td>
-<td><font color="#4444cc">Yes (208*)</font></td>
+<td><font color="#4444cc">Yes (210*)</font></td>
 <td><font color="#4444cc">Yes</font><font color="#660000"> (9*)</font></td>
 <td><font color="#4444cc">Yes</font><font color="#660000"> (4*)</font></td>
 
@@ -735,9 +718,30 @@ make reports on browser or os for (information is not stored in log
 file). To solve this, use another log format (like the combined
 format). </font>
 <hr>
-<script type="text/javascript">
-var date='$Date: 2013/07/09 18:54:23 $';
-document.writeln("Last revision: "+date);
 
-</script>
+
+<!-- You can remove this part if you distribution need documentation without external tags -->
+<!-- BEGIN_SOCIAL_NETWORKS -->
+<!-- google plus -->
+<span style="color: #bbb; font-weight: normal;">Article written by <a href="https://plus.google.com/+LaurentDestailleur?rel=author" rel="author" style="color: #ccc; font-weight: normal;">Laurent Destailleur</a>.</span><br>
+<br>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<g:plusone></g:plusone>
+<!-- facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://www.awstats.org/docs/awstats_compare.html" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="true"></div>
+<br>
+<!-- twitter -->
+<a href="https://twitter.com/awstats_project" class="twitter-follow-button" data-show-count="false">Follow @awstats_project</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- END_SOCIAL_NETWORKS -->
+
+
 </body></html>

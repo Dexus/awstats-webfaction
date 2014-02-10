@@ -1,5 +1,5 @@
 <!--SR by tomo@inecco.net, bojans@teol.net, mst@mikis.org -->
-<!-- $Revision: 1.2 $ - $Date: 2008/10/05 11:13:13 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Нова посета се дефинише као сваки нови <b>посетилац</b> који се није повезао на ваш сајт у току последњих <b>#VisitTimeOut# минута</b>.
 </div>

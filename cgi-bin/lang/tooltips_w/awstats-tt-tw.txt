@@ -1,4 +1,4 @@
-<!-- $Revision: 1.1 $ - $Date: 2004/02/07 16:14:10 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 此欄位為參觀網站的總次數，從相同位址來瀏灠本網站，時間間隔須至少#VisitTimeOut#分鐘才會再記錄一次。
 </div>

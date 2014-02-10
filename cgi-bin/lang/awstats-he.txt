@@ -1,9 +1,9 @@
 ﻿# Hebrew (Unicode) message file (http://lior.weissbrod.com)
-# $Revision: 1.4 $ - $Date: 2010/11/11 22:23:01 $
+# $Revision$ - $Date$
 #
 # Originally:
 # Hebrew message file (shimi@shimi.net)
-# $Revision: 1.4 $ - $Date: 2010/11/11 22:23:01 $
+# $Revision$ - $Date$
 PageCode=utf-8
 PageDir=rtl
 message0=לא ידוע

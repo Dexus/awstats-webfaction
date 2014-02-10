@@ -1,5 +1,5 @@
 # Romanian message file (Codre Adrian <codreadrian@softhome.net> - Florin Radulescu <florin_ef309@yahoo.com>)
-# $Revision: 1.3 $ - $Date: 2002/05/28 00:06:34 $
+# $Revision$ - $Date$
 PageCode=iso-8859-2
 message0=Necunoscute
 message1=Necunoscute (adresã ip nerezolvatã)

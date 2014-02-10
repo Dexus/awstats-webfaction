@@ -3,13 +3,12 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2006/07/23 22:57:48 $
 
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.15 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION = '20140126';
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG

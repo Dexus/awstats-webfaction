@@ -1,5 +1,5 @@
 <!-- Traducere in limba romana de Florin Radulescu: florin_ef309@yahoo.com -->
-<!-- $Revision: 1.2 $ - $Date: 2008/10/05 11:13:13 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
     O noua vizita este definita ca fiind orice <b>acces al unui vizitator</b>
     care nu a fost conectat la site in ultimele <b>#VisitTimeOut# mn</b>.

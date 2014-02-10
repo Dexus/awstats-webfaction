@@ -1,5 +1,5 @@
 # Arabic message file (SanDan u2canbe@hotmail.com)
-# $Revision: 1.2 $ - $Date: 2004/02/10 19:13:08 $
+# $Revision$ - $Date$
 PageCode=windows-1256
 PageDir=rtl
 message0=דÌוזב

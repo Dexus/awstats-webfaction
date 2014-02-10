@@ -1,5 +1,5 @@
 # Korean message file (translator unknown in previous R1.6/ currently power@k-june.com after 1.7)
-# $Revision: 1.1 $ - $Date: 2005/09/30 22:12:38 $
+# $Revision$ - $Date$
 PageCode=UTF-8
 message0=미확인
 message1=알수없는 접속자(알수없는 ip)

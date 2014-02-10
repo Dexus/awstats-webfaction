@@ -1,5 +1,5 @@
 # Danish message file by Ole Stanstrup (revised and amended by soren@dacafe.com)
-# $Revision: 1.16 $ - $Date: 2008/10/05 11:01:31 $
+# $Revision$ - $Date$
 # Danish message file Update by Michael Andreassen (revised michael@the-exterminator.dk)
 PageCode=iso-8859-1
 message0=Ukendt

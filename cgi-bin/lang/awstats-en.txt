@@ -1,5 +1,5 @@
 ﻿# English message file (eldy@users.sourceforge.net)
-# $Revision: 1.90 $ - $Date: 2010/06/09 14:46:20 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=Unknown
 message1=Unknown (unresolved ip)

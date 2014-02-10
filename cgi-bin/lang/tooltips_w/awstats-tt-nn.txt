@@ -1,5 +1,5 @@
 <!-- Norwegian Nynorsk tooltips message file (by Karl Ove Hufthammer <karl@huftis.org>) -->
-<!-- $Revision: 1.2 $ - $Date: 2008/10/05 11:13:13 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Eit nytt besøk er ein ny <b>gjest</b> som ikkje har vore tilkopla nettstaden siste <b>#VisitTimeOut# minutt</b>.
 </div>

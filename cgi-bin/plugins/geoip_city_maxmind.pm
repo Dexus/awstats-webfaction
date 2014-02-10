@@ -6,7 +6,6 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.33 $ - $Author: eldy $ - $Date: 2010/08/23 21:55:34 $
 # 1.4 - Chris Larsen - added file override capabilities
 
 # <-----
@@ -4311,8 +4310,10 @@ sub Init_geoip_city_maxmind {
 		$geoip_city_maxmind = Geo::IP->open($datafile, $mode);
 	}
 	$LoadedOverride=0;
-# Fails on some GeoIP version
-# 	debug(" Plugin geoip_city_maxmind: GeoIP initialized database_info=".$geoip_city_maxmind->database_info());
+	# Fails on some GeoIP version
+	# debug(" Plugin geoip_city_maxmind: GeoIP initialized database_info=".$geoip_city_maxmind->database_info());
+	if ($geoip_city_maxmind) { debug(" Plugin $PluginName: GeoIP plugin and gi object initialized",1); }
+	else { return "Error: Failed to create gi object for datafile=".$datafile; }
 	# ----->
 
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
@@ -4708,11 +4709,12 @@ sub SectionProcessIp_geoip_city_maxmind {
 		}
 		if ($Debug) { debug("  Plugin $PluginName: GetCityByIp for $param: [$record]",5); }
 	    if ($record) {
+	        my $city=$record->city;
 	#   	if ($PageBool) { $_city_p{$city}++; }
 	        if ($city) {
 	            my $countrycity=$record->country_code.'_'.$record->city;
 	            $countrycity=~s/ /%20/g;
-	            if ($region) { $countrycity.='_'.$record->region; }
+	            if ($record->region) { $countrycity.='_'.$record->region; }
 	            $_city_h{lc($countrycity)}++;
 	        } else {
 	            $_city_h{'unknown'}++;

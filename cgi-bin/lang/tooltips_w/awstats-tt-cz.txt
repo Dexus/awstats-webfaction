@@ -1,5 +1,5 @@
 <!-- Czech tooltips message file (David Jurenka <awstats-translation.box NO SP@M imx.jurenka D.O.T cz>) -->
-<!-- $Revision: 1.2 $ - $Date: 2009/08/26 10:14:07 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Za novou návštěvu se považuje každý <b>přístup návštěvníka</b>, který nebyl připojen na serveru v průběhu předchozích <b>#VisitTimeOut# minut</b>.
 </div>

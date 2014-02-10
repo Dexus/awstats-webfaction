@@ -6,7 +6,6 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.45 $ - $Author: eldy $ - $Date: 2013/01/17 19:54:15 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -36,7 +35,7 @@ my %TmpDNSLookup = ();
 
 # ---------- Init variables --------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.45 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION = '20140126';
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/ $NBOFLINESFORBENCHMARK /;

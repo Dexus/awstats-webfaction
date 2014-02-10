@@ -1,4 +1,4 @@
-<!-- $Revision: 1.1 $ - $Date: 2004/02/07 16:14:10 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Een nieuw bezoek is elke <b>binnenkomende bezoeker</b> (die een pagina bekijkt) die de laatste <b>#VisitTimeOut# mn</b> niet met uw site verbonden was.
 </div>

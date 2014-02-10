@@ -1,5 +1,5 @@
 <!-- Danish tooltips message file by Ole Stanstrup (revised and amended by soren@dacafe.com) -->
-<!-- $Revision: 1.2 $ - $Date: 2004/08/04 22:35:01 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Et nyt bes&oslash;g defineres som hver ny <b>indkommende bes&oslash;ger</b>, der ser eller browser en side, og ikke har v&aelig;ret inde p&aring; hjemmesiden i <b>#VisitTimeOut# minutter</b>.
 </div>

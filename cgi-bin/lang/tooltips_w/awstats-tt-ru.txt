@@ -1,5 +1,5 @@
 <!-- Russian tooltips message file -->
-<!-- $Revision: 1.3 $ - $Date: 2009/10/25 11:12:36 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Новым посетителем считается <b>пришедший посетитель</b>, которого не было на сайте более <b>#VisitTimeOut# минут</b>.
 </div>

@@ -1,5 +1,5 @@
 ﻿# Japanese message file (info@kchosting.jp)
-# $Revision: 1.9 $ - $Date: 2004/06/07 19:04:36 $
+# $Revision$ - $Date$
 PageCode=UTF-8
 message0=不明
 message1=不明(ipが解りません)

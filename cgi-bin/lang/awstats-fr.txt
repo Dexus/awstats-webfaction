@@ -1,5 +1,5 @@
 ﻿# French message file (eldy@users.sourceforge.net)
-# $Revision: 1.90 $ - $Date: 2010/03/09 21:52:06 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=Inconnu
 message1=Inconnus (IP non résolue)

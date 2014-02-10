@@ -1,7 +1,7 @@
 # Turkish message file
 # by giray@pultar.org 2002/08/29
 # by Hakan A. 2007/05/18
-# $Revision: 1.5 $ - $Date: 2008/10/05 11:01:31 $
+# $Revision$ - $Date$
 PageCode=iso-8859-1
 message0=Bilinmeyen
 message1=Bilinmeyen (çözülemeyen IP)

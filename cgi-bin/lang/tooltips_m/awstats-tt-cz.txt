@@ -1,5 +1,5 @@
 <!-- Czech tooltips message file (David Jurenka <awstats-translation.box NO SP@M imx.jurenka D.O.T cz>) -->
-<!-- $Revision: 1.1 $ - $Date: 2009/08/26 10:14:07 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 </div>
 <div class="CTooltip" id="tt2">

@@ -1,5 +1,5 @@
 # German message file
-# $Revision: 1.20 $ - $Date: 2008/10/05 11:21:34 $
+# $Revision$ - $Date$
 PageCode=iso-8859-1
 message0=Unbekannt
 message1=Unbekannte (IP konnte nicht aufgel&ouml;st werden )

@@ -1,6 +1,6 @@
 # Chinese (traditionnal) message file 
 # (by Geoffrey Hoo geoffrey.hoo@NOSPAMmyrealbox.com, remove "NOSPAM" to contact)
-# $Revision: 1.7 $ - $Date: 2004/01/15 09:19:24 $
+# $Revision$ - $Date$
 PageCode=big5
 message0=無法得知
 message1=無法得知 (不能反解網域名稱)

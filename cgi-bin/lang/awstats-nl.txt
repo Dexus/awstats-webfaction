@@ -1,7 +1,7 @@
 # Dutch message file (door Amedee Van Gasse - amedee.be)
 # Addon by Marcel Huijkman - marcel.huijkman@raketnet.nl
 # Reviewed 2007-09-15 by H. Hahn - h.hahn@hahn-informatica.nl
-# $Revision: 1.18 $ - $Date: 2008/11/15 15:00:16 $
+# $Revision$ - $Date$
 message0=Onbekend
 message1=Onbekend (niet-herleide IP-adressen)
 message2=Overige

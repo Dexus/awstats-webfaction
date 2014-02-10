@@ -1,5 +1,5 @@
 # Slovenian message file (goran@dodig.org)
-# $Revision: 1.2 $ - $Date: 2007/01/28 19:00:35 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=Neznanih
 message1=Neznanih (nepoznan IP)

@@ -1,5 +1,5 @@
 <!-- Galician tooltips message file by Ignacio Agulló (agullo@ati.es) -->
-<!-- $Revision: 1.1 $ - $Date: 2010/07/15 22:06:20 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 </div>
 <div class="CTooltip" id="tt2">

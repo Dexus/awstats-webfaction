@@ -1,5 +1,5 @@
 # Bulgarian message file translated by Aryan(aryan@bgns.net)
-# $Revision: 1.4 $ - $Date: 2008/07/25 07:34:50 $
+# $Revision$ - $Date$
 PageCode=utf-8
 message0=Непознати
 message1=Непознати (непреобразувани ip-адреси)

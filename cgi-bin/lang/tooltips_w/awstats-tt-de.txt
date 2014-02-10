@@ -1,4 +1,4 @@
-<!-- $Revision: 1.4 $ - $Date: 2008/10/05 11:22:17 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Ein neuer Besucher wird definiert als jeder neue <b>Besucher</b>, der eine Seite abgerufen hat und der auf Ihre Web Site in den letzten <b>#VisitTimeOut# min.</b> nicht zugegriffen hat.
 </div>

@@ -1,5 +1,5 @@
 # Ukrainian message file (roman@elsyst.km.ua)
-# $Revision: 1.13 $ - $Date: 2003/08/16 21:35:08 $
+# $Revision$ - $Date$
 PageCode=windows-1251
 message0=Невiдомий
 message1=Невiдомих (не вдалось перетворити IP)

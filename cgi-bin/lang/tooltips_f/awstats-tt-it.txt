@@ -1,5 +1,5 @@
 <!-- Italian tooltips message file (starknight@starkingdom.it) -->
-<!-- $Revision: 1.1 $ - $Date: 2006/01/04 18:52:47 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 </div>
 <div class="CTooltip" id="tt2">

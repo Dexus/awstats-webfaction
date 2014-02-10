@@ -3,7 +3,6 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2013/05/02 07:30:52 $
 
 
 #package AWSDOM;
@@ -17,7 +16,9 @@
 %DomainsHashIDLib = (
 'localhost','localhost',
 'i0','Local network host',
+'a1','Satellite access host',
 'a2','Satellite access host',
+'ap','African Regional Property Organization',
 
 'ac','Ascension Island','ad','Andorra','ae','United Arab Emirates',
 'aero','Aero/Travel domains','af','Afghanistan',
@@ -29,7 +30,8 @@
 'az','Azerbaidjan','ba','Bosnia-Herzegovina','bb','Barbados',
 'bd','Bangladesh','be','Belgium','bf','Burkina Faso','bg','Bulgaria',
 'bh','Bahrain','bi','Burundi','biz','Biz domains','bj','Benin','bm','Bermuda',
-'bn','Brunei Darussalam','bo','Bolivia','br','Brazil','bs','Bahamas',
+'bn','Brunei Darussalam','bo','Bolivia','bq','Bonaire, Sint Eustatius And Saba',
+'br','Brazil','bs','Bahamas',
 'bt','Bhutan','bv','Bouvet Island','bw','Botswana','by','Belarus',
 'bz','Belize','ca','Canada','cc','Cocos (Keeling) Islands',
 'cd','Congo, Democratic Republic of the',

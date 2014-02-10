@@ -18,7 +18,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #------------------------------------------------------------------------------
-# $Revision: 1.992 $ - $Author: eldy $ - $Date: 2013/07/09 19:59:20 $
 require 5.007;
 
 #$|=1;
@@ -37,10 +36,8 @@ use File::Spec;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.992 $';
-$REVISION =~ /\s(.*)\s/;
-$REVISION = $1;
-$VERSION  = "7.2 (build $REVISION)";
+$REVISION = '20140126';
+$VERSION  = "7.3 (build $REVISION)";
 
 # ----- Constants -----
 use vars qw/
@@ -1763,15 +1760,19 @@ sub Read_Config {
 	
 		#CL - Added to open config if full path is passed to awstats 
 	if ( !$FileConfig ) {
+		
+		my $SiteConfigBis = File::Spec->rel2abs($SiteConfig);
+		debug("Finally, try to open an absolute path : $SiteConfigBis", 2);
 	
-		$SiteConfig = File::Spec->rel2abs($SiteConfig);
-		debug("Finally, try to open an absolute path : $SiteConfig", 2);
-	
-		if ( -f $SiteConfig && open( CONFIG, "$SiteConfig" ) ) {
-			$FileConfig = "$SiteConfig";
+		if ( -f $SiteConfigBis && open(CONFIG, "$SiteConfigBis")) {
+			$FileConfig = "$SiteConfigBis";
 			$FileSuffix = '';
-			if ($Debug){debug("Opened config: $SiteConfig", 2);}
-		}else{if ($Debug){debug("Unable to open config file: $SiteConfig", 2);}}
+			if ($Debug){debug("Opened config: $SiteConfigBis", 2);}
+			$SiteConfig=$SiteConfigBis;
+		}
+		else {
+			if ($Debug){debug("Unable to open config file: $SiteConfigBis", 2);}
+		}
 	}
 	
 	if ( !$FileConfig ) {
@@ -8600,6 +8601,8 @@ sub PrintCLIHelp{
 	print "Other options:\n";
 	print
 "  -debug=X     to add debug informations lesser than level X (speed reduced)\n";
+	print
+"  -version     show AWStats version\n";
 	print "\n";
 	print "Now supports/detects:\n";
 	print
@@ -9785,7 +9788,7 @@ sub HTMLTopBanner{
 		}
 		print "<form name=\"FormDateFilter\" action=\""
 		  . XMLEncode("$AWScript${NewLinkParams}")
-		  . "\" style=\"padding: 0px 0px 0px 0px; margin-top: 0\"$NewLinkTarget>\n";
+		  . "\" style=\"padding: 0px 0px 20px 0px; margin-top: 0\"$NewLinkTarget>\n";
 	}
 
 	if ( $QueryString !~ /buildpdf/i ) {
@@ -12194,11 +12197,11 @@ sub HTMLShowLogins{
 	$total_p = $total_h = $total_k = 0;
 	my $count = 0;
 	if ( $HTMLOutput{'alllogins'} ) {
-		&BuildKeyList( $MaxRowsInHTMLOutput, $MinHit{'Host'},
+		&BuildKeyList( $MaxRowsInHTMLOutput, $MinHit{'Login'},
 			\%_login_h, \%_login_p );
 	}
 	if ( $HTMLOutput{'lastlogins'} ) {
-		&BuildKeyList( $MaxRowsInHTMLOutput, $MinHit{'Host'},
+		&BuildKeyList( $MaxRowsInHTMLOutput, $MinHit{'Login'},
 			\%_login_h, \%_login_l );
 	}
 	foreach my $key (@keylist) {
@@ -17227,6 +17230,11 @@ if ( $ENV{'AWSTATS_FORCE_CONFIG'} ) {
 	$SiteConfig = &Sanitize( $ENV{'AWSTATS_FORCE_CONFIG'} );
 }
 
+# Display version information
+if ( $QueryString =~ /(^|&|&amp;)version/i ) {
+	print "$PROG $VERSION\n";
+	exit 0;
+}
 # Display help information
 if ( ( !$ENV{'GATEWAY_INTERFACE'} ) && ( !$SiteConfig ) ) {
 	&PrintCLIHelp();
@@ -17664,8 +17672,7 @@ if ( $QueryString =~ /lastline=(\d{14})/i ) {
 	$LastLine = $1;
 }
 if ($Debug) {
-	debug(
-		"Last year=$lastyearbeforeupdate - Last month=$lastmonthbeforeupdate");
+	debug("Last year=$lastyearbeforeupdate - Last month=$lastmonthbeforeupdate");
 	debug("Last day=$lastdaybeforeupdate - Last hour=$lasthourbeforeupdate");
 	debug("LastLine=$LastLine");
 	debug("LastLineNumber=$LastLineNumber");
@@ -17871,9 +17878,14 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 	my $regipv4l          = qr/^::ffff:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/;
 	my $regipv6           = qr/^[0-9A-F]*:/i;
 	my $regvermsie        = qr/msie([+_ ]|)([\d\.]*)/i;
+	my $regvermsie11      = qr/trident\/7\.\d*\;([+_ ]|)rv:([\d\.]*)/i;
 	my $regvernetscape    = qr/netscape.?\/([\d\.]*)/i;
 	my $regverfirefox     = qr/firefox\/([\d\.]*)/i;
-	my $regveropera       = qr/opera\/([\d\.]*)/i;
+	# For Opera:
+	# OPR/15.0.1266 means Opera 15 
+	# Opera/9.80 ...... Version/12.16 means Opera 12.16
+	# Mozilla/5.0 .... Opera 11.51 means Opera 11.51
+	my $regveropera = qr/opera\/9\.80\s.+\sversion\/([\d\.]+)|ope?ra?[\/\s]([\d\.]+)/i;
 	my $regversafari      = qr/safari\/([\d\.]*)/i;
 	my $regversafariver   = qr/version\/([\d\.]*)/i;
 	my $regverchrome      = qr/chrome\/([\d\.]*)/i;
@@ -18396,6 +18408,12 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 			debug( "  This is a not already processed record ($timerecord)",
 				4 );
 		}
+
+		# Check if there's a CloudFlare Visitor IP in the query string
+		# If it does, replace the ip
+		if ( $pos_query >= 0 && $field[$pos_query] && $field[$pos_query] =~ /\[CloudFlare_Visitor_IP[:](\d+[.]\d+[.]\d+[.]\d+)\]/ ) {
+			$field[$pos_host] = "$1";
+		}	
 
 		# We found a new line
 		#----------------------------------------
@@ -19412,20 +19430,20 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 					if ( !$uabrowser ) {
 						my $found = 1;
 
-						# Firefox ?
-						if (   $UserAgent =~ /$regverfirefox/o
-							&& $UserAgent !~ /$regnotfirefox/o )
-						{
-							$_browser_h{"firefox$1"}++;
-							if ($PageBool) { $_browser_p{"firefox$1"}++; }
-							$TmpBrowser{$UserAgent} = "firefox$1";
-						}
-
 						# Opera ?
-						elsif ( $UserAgent =~ /$regveropera/o ) {
-							$_browser_h{"opera$1"}++;
-							if ($PageBool) { $_browser_p{"opera$1"}++; }
-							$TmpBrowser{$UserAgent} = "opera$1";
+						if ( $UserAgent =~ /$regveropera/o ) {	# !!!! version number in in regex $1 or $2 !!!
+						    $_browser_h{"opera".($1||$2)}++;
+						    if ($PageBool) { $_browser_p{"opera".($1||$2)}++; }
+						    $TmpBrowser{$UserAgent} = "opera".($1||$2);
+						}
+						
+						# Firefox ?
+						elsif ( $UserAgent =~ /$regverfirefox/o
+						    && $UserAgent !~ /$regnotfirefox/o )
+						{
+						    $_browser_h{"firefox$1"}++;
+						    if ($PageBool) { $_browser_p{"firefox$1"}++; }
+						    $TmpBrowser{$UserAgent} = "firefox$1";
 						}
 
 						# Chrome ?
@@ -19462,13 +19480,21 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 							$TmpBrowser{$UserAgent} = "svn$1";
 						}
 
-						# IE ? (must be at end of test)
+						# IE < 11 ? (must be at end of test)
 						elsif ($UserAgent =~ /$regvermsie/o
 							&& $UserAgent !~ /$regnotie/o )
 						{
 							$_browser_h{"msie$2"}++;
 							if ($PageBool) { $_browser_p{"msie$2"}++; }
 							$TmpBrowser{$UserAgent} = "msie$2";
+						}
+						
+						# IE >= 11
+                        elsif ($UserAgent =~ /$regvermsie11/o && $UserAgent !~ /$regnotie/o)
+						{
+                            $_browser_h{"msie$2"}++;
+                            if ($PageBool) { $_browser_p{"msie$2"}++; }
+                            $TmpBrowser{$UserAgent} = "msie$2";
 						}
 
 						# Netscape 6.x, 7.x ... ? (must be at end of test)

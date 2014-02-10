@@ -1,5 +1,5 @@
 # Galician message file by Ignacio Agull&oacute; (agullo@ati.es)
-# $Revision: 1.7 $ - $Date: 2008/10/05 11:01:31 $
+# $Revision$ - $Date$
 PageCode=iso-8859-1
 message0=Desco&ntilde;ecido
 message1=Desco&ntilde;ecido (IP non resolto)

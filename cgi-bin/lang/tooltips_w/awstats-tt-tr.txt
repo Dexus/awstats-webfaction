@@ -1,4 +1,4 @@
-<!-- $Revision: 1.1 $ - $Date: 2004/02/07 16:14:10 $ -->
+<!-- $Revision$ - $Date$ -->
 <div class="CTooltip" id="tt1">
 Yeni ziyaretçi, geçmiþ <b>#VisitTimeOut# dakika</b> içinde sitenize baðlanmamýþ ve o anda sitenize bakan kullanýcýdýr.
 </div>
