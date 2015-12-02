@@ -1,7 +1,6 @@
 
-------------- AWStats --------------
-	 Advanced Web Statistics
-------------------------------------
+# AWStats - Advanced Web Statistics
+-----------------------------------
 
 AWStats (Advanced Web Statistics) is a powerful, full-featured web server
 logfile analyzer which shows you all your Web statistics including: visitors,
@@ -13,26 +12,37 @@ server log files (and even ftp servers or mail logs) on all Operating Systems.
 
 License: GNU GPL v3+ (GNU General Public License. See LICENSE file),
          OSI Certified Open Source Software license.
-Version: 7.3
-Release date: January 2014
+
+Version: 7.4
+
+Release date: July 2015
+
 Platforms: All (Linux, NT, BSD, Solaris and other *NIX's, BeOS, OS/2...)
+
 Author: Laurent Destailleur <eldy@users.sourceforge.net>
+
 AWStats official web site and latest version: http://www.awstats.org
 
 I   - Features and requirements of AWStats
+
 	  I - 1) Features, what AWStats can show you
+
 	  I - 2) Requirements for using AWStats
+
 	  I - 3) Files
+
 II  - Install, Setup and Use AWStats
+
 III - Benchmark
+
 IV  - About the author, license and support
 
 
 
-I - FEATURES AND REQUIREMENTS
+# - FEATURES AND REQUIREMENTS
 ------------------------------------
 
-I - 1) Features
+## Features
 
 	A full log analysis enables AWStats to show you the following information:
 	* Number of VISITS and UNIQUE VISITORS
@@ -86,7 +96,7 @@ I - 1) Features
 	* Available on all platforms
 
 
-I - 2) Requirements
+## Requirements
 
 	To use AWStats CGI script, you need the following requirements:
 	* Your server must log web access in a log file you can read.
@@ -101,7 +111,7 @@ I - 2) Requirements
 	  http://www.perl.com/pub/language/info/software.html (All OS)
 
 
-I - 3) Files
+## Files
 
 	The distribution of AWStats package includes the following files:
 	README.TXT                          This file
@@ -129,35 +139,41 @@ I - 3) Files
 
 
 
-II - INSTALL, SETUP AND USE AWSTATS
+# INSTALL, SETUP AND USE AWSTATS
 -----------------------------------
 
 The documentation available for this release in HTML format is
 in the docs/ directory.
 
 You can find a most up-to-date documentation at:
-http://www.awstats.org
+<http://www.awstats.org>
 
 
 
-III - BENCHMARK
+# BENCHMARK
 -----------------------------------
 
 Tests and results are available in AWStats documentation, in docs/ directory.
 
 
-IV - SOCIAL NETWORKS
+# SOCIAL NETWORKS
 -----------------------------------
 
 Follow AWStats project on
-Facebook: https://www.facebook.com/awstats
-Google+: https://plus.google.com/+AWStatsOrgProject
-Twitter: http://www.twitter.com/awstats_project
+
+Facebook: <https://www.facebook.com/awstats>
+
+Google+: <https://plus.google.com/+AWStatsOrgProject>
+
+Twitter: <http://www.twitter.com/awstats_project>
 
 
-V - ABOUT THE AUTHOR, LICENSE AND SUPPORT
------------------------------------------
-Copyright (C) 2000-2014 - Laurent Destailleur - eldy@users.sourceforge.net
+# ABOUT THE AUTHOR, LICENSE AND SUPPORT
+---------------------------------------
+Copyright (C) 2000-2014 - Laurent Destailleur - eldy@users.sourceforge.net - <http://www.nltechno.com>
+
+Laurent Destailleur is also the project leader of [Dolibarr ERP CRM Opensource project] <http://www.dolibarr.org>,
+and author of AWBot, CVSChangeLogBuilder, DoliDroid and founder of DoliCloud SaaS <http://www.dolicloud.com>.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
