@@ -52,7 +52,7 @@ $ShowHoursStats $ShowDomainsStats $ShowHostsStats
 $ShowRobotsStats $ShowSessionsStats $ShowPagesStats $ShowFileTypesStats
 $ShowOSStats $ShowBrowsersStats $ShowDownloadsStats $ShowOriginStats
 $ShowKeyphrasesStats $ShowKeywordsStats $ShowMiscStats $ShowHTTPErrorsStats
-$BuildReportFormat
+$BuildReportFormat $TrapInfosForHTTPErrorCodes
 @ExtraName
 @PluginsToLoad
 /;
@@ -79,7 +79,7 @@ $nowsec $nowmin $nowhour $nowday $nowmonth $nowyear $nowwday $nowyday $nowns
 # Return:		None
 #------------------------------------------------------------------------------
 sub error {
-	print "Error: $_[0].\n";
+	print STDERR "Error: $_[0].\n";
     exit 1;
 }
 
@@ -93,15 +93,7 @@ sub error {
 sub warning {
 	my $messagestring=shift;
 	debug("$messagestring",1);
-#	if ($WarningMessages) {
-#    	if ($HTMLOutput) {
-#    		$messagestring =~ s/\n/\<br \/\>/g;
-#    		print "$messagestring<br />\n";
-#    	}
-#    	else {
-	    	print "$messagestring\n";
-#    	}
-#	}
+   	print STDERR "$messagestring\n";
 }
 
 #------------------------------------------------------------------------------
@@ -233,7 +225,7 @@ sub Parse_Config {
 		if ( $param =~ /^LoadPlugin/ ) { push @PluginsToLoad, $value; next; }
 
 		# If parameters was not found previously, defined variable with name of param to value
-		print $param."-".$value."\n";
+		if ($Debug) { debug($param."-".$value); }
 		$$param=$value;
 	}
 
@@ -311,6 +303,10 @@ elsif (-s "/usr/local/awstats/wwwroot/cgi-bin/awstats.pl") {
 	$Awstats="/usr/local/awstats/wwwroot/cgi-bin/awstats.pl";
 	$AwstatsFound=1;
 }
+elsif (-s "/usr/lib/cgi-bin/awstats.pl") {
+	$Awstats="/usr/lib/cgi-bin/awstats.pl";
+	$AwstatsFound=1;
+}
 if (! $AwstatsFound) {
 	error("Can't find AWStats program ('$Awstats').\nUse -awstatsprog option to solve this");
 	exit 1;
@@ -361,8 +357,11 @@ if ($ShowKeyphrasesStats) { push @OutputList,'keyphrases'; }
 if ($ShowKeywordsStats) { push @OutputList,'keywords'; }
 #if ($ShowMiscStats) { push @OutputList,'misc'; }			# There is no dedicated page for misc
 if ($ShowHTTPErrorsStats) {
-	#push @OutputList,'errors'; 							# There is no dedicated page for errors					
-	push @OutputList,'errors404';		
+	#push @OutputList,'errors'; 							# There is no dedicated page for errors
+	$TrapInfosForHTTPErrorCodes = '404' if ( ! $TrapInfosForHTTPErrorCodes );
+	foreach my $code (split(' ', $TrapInfosForHTTPErrorCodes)) {
+		push @OutputList,"errors$code";
+	}
 }
 #if ($ShowSMTPErrorsStats) { push @OutputList,'errors'; }
 foreach my $extranum (1..@ExtraName-1) {
@@ -424,7 +423,7 @@ if ($BuildDate) {
 my $cpt=0;
 my $NoLoadPlugin="";
 if ($BuildPDF) { $NoLoadPlugin.="tooltips,rawlog,hostinfo"; }
-my $smallcommand="\"$Awstats\" -config=$SiteConfig".($BuildPDF?" -buildpdf":"").($NoLoadPlugin?" -noloadplugin=$NoLoadPlugin":"").($DatabaseBreak?" -databasebreak=$DatabaseBreak":"")." -staticlinks".($OutputSuffix ne $SiteConfig?"=awstats.$OutputSuffix":"");
+my $smallcommand="\"$Awstats\" -config=$SiteConfig".($BuildPDF?" -buildpdf":"").($NoLoadPlugin?" -noloadplugin=$NoLoadPlugin":"")." -staticlinks".($OutputSuffix ne $SiteConfig?"=awstats.$OutputSuffix":"");
 if ($StaticExt && $StaticExt ne 'html')     { $smallcommand.=" -staticlinksext=$StaticExt"; }
 if ($DirIcons)      { $smallcommand.=" -diricons=$DirIcons"; }
 if ($DirConfig)     { $smallcommand.=" -configdir=$DirConfig"; }
@@ -432,6 +431,7 @@ if ($Lang)          { $smallcommand.=" -lang=$Lang"; }
 if ($DayRequired)   { $smallcommand.=" -day=$DayRequired"; }
 if ($MonthRequired) { $smallcommand.=" -month=$MonthRequired"; }
 if ($YearRequired)  { $smallcommand.=" -year=$YearRequired"; }
+if ($DatabaseBreak) { $smallcommand.=" -databasebreak=$DatabaseBreak"; }
 
 # Launch main awstats output
 my $command="$smallcommand -output";
