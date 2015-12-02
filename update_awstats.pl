@@ -64,6 +64,17 @@ if (-e $custom_path) {
 	close(CUSTOM) or die("[ERROR] unable to close $custom_path after read: $!\n");
 }
 
+# Invert and combine the sites
+my %log_filenames_for_site;
+foreach my $log_filename (sort keys %url_for_log) {
+	my $site = $url_for_log{$log_filename};
+	if (exists($log_filenames_for_site{$site})) {
+		push(@{$log_filenames_for_site{$site}},$log_filename);
+	} else {
+		$log_filenames_for_site{$site} = [$log_filename];
+	}
+}
+
 #
 #
 #
@@ -71,11 +82,11 @@ if (-e $custom_path) {
 my $template_config;
 while(<DATA>) {	$template_config .= $_; }
 
-foreach my $site (sort keys %url_for_log) {
+foreach my $site (sort keys %log_filenames_for_site) {
 
 	# Ensure awstats configuration file exists
 
-	my $config_path = File::Spec->catfile($awstats_folder_path,'cgi-bin','awstats.'.$url_for_log{$site}.'.conf');
+	my $config_path = File::Spec->catfile($awstats_folder_path,'cgi-bin','awstats.'.$site.'.conf');
 		
 	if (not -e $config_path) {
 
@@ -84,41 +95,52 @@ foreach my $site (sort keys %url_for_log) {
 		my $config_contents = $template_config;
 		$config_contents =~ s/HOME/$home_path/gsm;
 		$config_contents =~ s/APPNAME/$appname/gsm;
-		$config_contents =~ s/DOMAIN/$url_for_log{$site}/gsm;
+		$config_contents =~ s/DOMAIN/$site/gsm;
 		open(CONFIG,">$config_path") or die("[ERROR] unable to create $config_path to write: $!\n");
 		print CONFIG $config_contents;
 		close(CONFIG) or die("[ERROR] unable to close $config_path after write: $!\n");
 		
-		my $site_data_path = File::Spec->catdir($data_folder_path,$url_for_log{$site});
+		my $site_data_path = File::Spec->catdir($data_folder_path,$site);
 		mkdir($site_data_path) or die("[ERROR] unable to mkdir $site_data_path: $!\n");
 	}
 
 	# Merge logs and process
 
-	my @logmerge = (
-		$logresolvemerge_path,
-		File::Spec->catfile($log_folder_path,'access_'.$site.'.log'),
-		File::Spec->catfile($log_folder_path,'access_'.$site.'.log.1'),
-		File::Spec->catfile($log_folder_path,'error_'.$site.'.log'),
-		File::Spec->catfile($log_folder_path,'error_'.$site.'.log.1'),
-		'>',
-		File::Spec->catfile($data_folder_path,'log-'.$url_for_log{$site}),
-		'||',
-		$logresolvemerge_path,
-		File::Spec->catfile($log_folder_path,'access_'.$site.'.log'),
-		File::Spec->catfile($log_folder_path,'error_'.$site.'.log'),
-		'>',
-		File::Spec->catfile($data_folder_path,'log-'.$url_for_log{$site}),
-	);
-	my $logmerge = join(' ',@logmerge);
-	system($logmerge);
+	my @logmerge = ( $logresolvemerge_path );
+
+	my $log_filenames = $log_filenames_for_site{$site};
+	foreach my $log_filename (@{$log_filenames}) {
+		push(@logmerge,File::Spec->catfile($log_folder_path,'access_'.$log_filename.'.log'));
+		push(@logmerge,File::Spec->catfile($log_folder_path,'access_'.$log_filename.'.log.1'));
+		push(@logmerge,File::Spec->catfile($log_folder_path,'error_'.$log_filename.'.log'));
+		push(@logmerge,File::Spec->catfile($log_folder_path,'error_'.$log_filename.'.log.1'));
+	}
+
+	push(@logmerge,'>');
+	push(@logmerge,File::Spec->catfile($data_folder_path,'log-'.$site));
 	
+	push(@logmerge,'||');
+	push(@logmerge,$logresolvemerge_path);
+	
+	foreach my $log_filename (@{$log_filenames}) {
+		push(@logmerge,File::Spec->catfile($log_folder_path,'access_'.$log_filename.'.log'));
+		push(@logmerge,File::Spec->catfile($log_folder_path,'error_'.$log_filename.'.log'));
+	}
+	
+	push(@logmerge,'>');
+	push(@logmerge,File::Spec->catfile($data_folder_path,'log-'.$site));
+
+	my $logmerge = join(' ',@logmerge);
+	
+	system($logmerge);
+		
 	my @processlog = (
 		$awstats_path,
-		'-config='.$url_for_log{$site},
+		'-config='.$site,
 		'-u',
 	);
 	my $processlog = join(' ',@processlog);
+	
 	system($processlog);
 }
 
