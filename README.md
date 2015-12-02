@@ -13,7 +13,7 @@ This is a project that aims to simplify the installation of the latest [awstats]
 Install
 -------
 
-- Add a new **Static/CGI/PHP-5.4** application within your WebFaction account at https://my.webfaction.com/applications.
+- Add a new **Static/CGI/PHP-5.4 or later** application within your WebFaction account at https://my.webfaction.com/applications.
 - `ssh` into your account and change into the application's directory:
   - `cd ~/webapps/APPNAME`
   - `git clone https://github.com/grahammiln/awstats-webfaction.git`
